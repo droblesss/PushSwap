@@ -1,6 +1,8 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+
+# include <stdio.h>
+# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 
 typedef struct s_list
@@ -8,6 +10,16 @@ typedef struct s_list
 	int			content;
 	struct s_list	*next;
 }	t_list;
+
+void	ft_lstdelone(t_list *lst, void (*del)(int))
+{
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+		lst = NULL;
+	}
+}
 
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -85,21 +97,29 @@ int lstpop(t_list *stack)
 	// integrar funcion de tamaño de lista para comprobar que no esté vacía
 
 	// devolver el valor de tail
-	while (stack != NULL && stack->next != NULL)
-		stack = stack->next;
-	return (stack->content);
+	t_list	*aux;
+	int		cont;
 
+	cont = stack->content;
+	aux = stack;
+	stack = stack->next;
+	free(aux);
+	aux = NULL;
+	return (cont);
 }
 
 int main(int argc, char **argv)
 {
     t_list *pilaA = ft_lstnew(899);
     t_list *pilaB = ft_lstnew(0);
-    t_list pilaAux = *ft_lstnew(0);
+    //t_list pilaAux = *ft_lstnew(0);
 
-	int j = 30;
+	//int j = 30;
 	int i = 0;
-	int aux;
+
+	(void)argc;
+		
+	printf("EL CONTENIDO DE LA PILA A ES \n");
 
 	while (argv[i] != NULL)
 	{
@@ -107,8 +127,6 @@ int main(int argc, char **argv)
 		i++;
 	}
 
-	
-    int valor = 0;
 
    
 	while (pilaA->next)
@@ -117,7 +135,16 @@ int main(int argc, char **argv)
 		pilaA = pilaA->next;
 	}
 	ft_lstadd_front(&pilaB, ft_lstnew(lstpop(pilaA)));
-	printf("EL CONTENIDO DE LA PILA B ES %d\n", pilaB->content);
+	///printf("EL CONTENIDO DE LA PILA B ES %d\n", pilaB->content);
+	//ft_lstadd_front(&pilaB, ft_lstnew(100));
+	//printf("EL CONTENIDO DE LA PILA B ES %d\n", pilaB->content);
+	printf("EL CONTENIDO DE LA PILA B es \n");
+	while (pilaB->next)
+	{
+		printf("%d\n", (int)pilaB->content);
+		pilaB = pilaB->next;
+	}
 
-return 0;
+	
+	return 0;
 }
