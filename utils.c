@@ -1,17 +1,26 @@
 
-typedef struct s_list
-{
-	int			content;
-	struct s_list	*next;
-}	t_list;
+# include "push.h"
 
-t_list	*ft_lstlast(t_list *lst)
+
+
+void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
 {
-	while (lst != NULL && lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+    printf("\n--------------\n");
+    printf("A:");
+    while (stack_a)
+    {
+        printf(" %d |", (int)stack_a->content);
+        stack_a = stack_a->next;
+    }
+    printf("\n");
+    printf("B:");
+    while (stack_b)
+    {
+        printf(" %d |", (int)stack_b->content);
+        stack_b = stack_b->next;
+    }
+    printf("\n--------------\n");
 }
-
 int	ft_atoi(const char *str)
 {
 	int		c;
@@ -40,14 +49,28 @@ int	ft_atoi(const char *str)
 		return (0);
 	return (numero * sign);
 }
+void	ft_lstdelone(t_list *lst, void (*del)(int))
+{
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+		lst = NULL;
+	}
+}
 
-
+t_list	*ft_lstlast(t_list *lst)
+{
+	while (lst != NULL && lst->next != NULL)
+		lst = lst->next;
+	return (lst);
+}
 
 t_list	*ft_lstnew(int content)
 {
 	t_list	*nodo;
 
-	nodo = (t_list *) malloc(sizeof(int));
+	nodo = (t_list*)malloc(sizeof(t_list));
 	if (nodo != NULL)
 	{
 		nodo->content = content;
@@ -76,31 +99,25 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		temporal->next = new;
 }
 
-int lstpop(t_list *stack)
+int lstpop(t_list **stack)
 {
-	// integrar funcion de tamaño de lista para comprobar que no esté vacía
+	
+	t_list	*aux;
+	int		cont;
 
-	// devolver el valor de tail
-	while (stack != NULL && stack->next != NULL)
-		stack = stack->next;
-	return (stack->content);
-
+	cont = (*stack)->content;
+	(aux) = (*stack);
+	*(stack) = (*stack)->next;
+	free(aux);
+	return (cont);
 }
-void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)//Imprimir todos los elementos del stack
+
+void fillA(t_list **stackA, char **argv)
 {
-    printf("\n--------------\n");
-    printf("A:");
-    while (stack_a)
-    {
-        printf(" %d |", (int)stack_a->content);
-        stack_a = stack_a->next;
-    }
-    printf("\n");
-    printf("B:");
-    while (stack_b)
-    {
-        printf(" %d |", (int)stack_b->content);
-        stack_b = stack_b->next;
-    }
-    printf("\n--------------\n");
+	int i = 1;
+	while (argv[i] != NULL)
+	{
+		ft_lstadd_back(stackA, ft_lstnew(ft_atoi(argv[i])));
+		i++;
+	}
 }
