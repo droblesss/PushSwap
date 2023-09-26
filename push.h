@@ -5,7 +5,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-//# include "42Libft-125-main/libft.h"
+# include "Libft/libft.h"
+# include "Ft_printf/libftprintf.h"
 
 typedef struct s_list
 {
@@ -14,7 +15,6 @@ typedef struct s_list
 }	t_list;
 
 t_list	*ft_lstlast(t_list *lst);
-int	ft_atoi(const char *str);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);

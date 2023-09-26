@@ -3,6 +3,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "push.h"
 
 
 typedef struct s_list
@@ -112,9 +113,13 @@ int main(int argc, char **argv)
 {
     t_list *pilaA = ft_lstnew(899);
     t_list *pilaB = ft_lstnew(0);
-    //t_list pilaAux = *ft_lstnew(0);
 
-	//int j = 30;
+	t_list *auxA;
+	t_list *auxB;
+
+	auxA=pilaA;
+	auxB=pilaB;
+
 	int i = 0;
 
 	(void)argc;
