@@ -1,16 +1,7 @@
 
-# include <stdio.h>
-# include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
+
 # include "push.h"
 
-
-typedef struct s_list
-{
-	int			content;
-	struct s_list	*next;
-}	t_list;
 
 void	ft_lstdelone(t_list *lst, void (*del)(int))
 {
@@ -59,12 +50,11 @@ int	ft_atoi(const char *str)
 }
 
 
-
 t_list	*ft_lstnew(int content)
 {
 	t_list	*nodo;
 
-	nodo = (t_list *) malloc(sizeof(int));
+	nodo = (t_list*)malloc(sizeof(t_list));
 	if (nodo != NULL)
 	{
 		nodo->content = content;
@@ -93,17 +83,15 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		temporal->next = new;
 }
 
-int lstpop(t_list *stack)
+int lstpop(t_list **stack)
 {
-	// integrar funcion de tamaño de lista para comprobar que no esté vacía
-
-	// devolver el valor de tail
+	
 	t_list	*aux;
 	int		cont;
 
-	cont = stack->content;
-	aux = stack;
-	stack = stack->next;
+	aux = (*stack);
+	(*stack) = (*stack)->next;
+	cont = (*stack)->content;
 	free(aux);
 	aux = NULL;
 	return (cont);
@@ -111,45 +99,31 @@ int lstpop(t_list *stack)
 
 int main(int argc, char **argv)
 {
-    t_list *pilaA = ft_lstnew(899);
-    t_list *pilaB = ft_lstnew(0);
+    t_list *stackA = NULL;
+    t_list *stackB = NULL;
+	int		size;
+
+	size = argc -1;
 
 	t_list *auxA;
 	t_list *auxB;
 
-	auxA=pilaA;
-	auxB=pilaB;
+	auxA=stackA;
+	auxB=stackB;
 
-	int i = 0;
+
+	int i = 1;
 
 	(void)argc;
 		
-	printf("EL CONTENIDO DE LA PILA A ES \n");
-
 	while (argv[i] != NULL)
 	{
-		ft_lstadd_back(&pilaA, ft_lstnew(ft_atoi(argv[i])));
+		ft_lstadd_back(&stackA, ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
 
-
-   
-	while (pilaA->next)
-	{
-		printf("%d\n", (int)pilaA->content);
-		pilaA = pilaA->next;
-	}
-	ft_lstadd_front(&pilaB, ft_lstnew(lstpop(pilaA)));
-	///printf("EL CONTENIDO DE LA PILA B ES %d\n", pilaB->content);
-	//ft_lstadd_front(&pilaB, ft_lstnew(100));
-	//printf("EL CONTENIDO DE LA PILA B ES %d\n", pilaB->content);
-	printf("EL CONTENIDO DE LA PILA B es \n");
-	while (pilaB->next)
-	{
-		printf("%d\n", (int)pilaB->content);
-		pilaB = pilaB->next;
-	}
-
-	
+	sa(&stackA,0);
+	ft_lstadd_back(&stackB, ft_lstnew(lstpop(&stackA)));
+	ft_print_stack_horizontal(stackA, stackB);
 	return 0;
 }

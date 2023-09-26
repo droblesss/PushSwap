@@ -1,4 +1,3 @@
-#include "push.h"
 
 typedef struct s_list
 {
@@ -86,4 +85,22 @@ int lstpop(t_list *stack)
 		stack = stack->next;
 	return (stack->content);
 
+}
+void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)//Imprimir todos los elementos del stack
+{
+    printf("\n--------------\n");
+    printf("A:");
+    while (stack_a)
+    {
+        printf(" %d |", (int)stack_a->content);
+        stack_a = stack_a->next;
+    }
+    printf("\n");
+    printf("B:");
+    while (stack_b)
+    {
+        printf(" %d |", (int)stack_b->content);
+        stack_b = stack_b->next;
+    }
+    printf("\n--------------\n");
 }
