@@ -120,6 +120,13 @@ void rra(t_list **stack_a, int ss)
 	aux= ft_lstlast(*stack_a);
 	extract = aux->content;
 	ft_lstadd_front(stack_a,ft_lstnew(extract));
+	while ((*stack_a)->size >= 1)
+	{
+		(&stack_a) = (stack_a)->next;
+		(*stack_a)->size--;
+	}
+	(*stack_a)->next = NULL;
+	//free(aux);
 	if (ss == 0)
 		write(1, "rra\n", 4);
 	
