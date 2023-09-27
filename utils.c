@@ -121,3 +121,9 @@ void fillA(t_list **stackA, char **argv)
 		i++;
 	}
 }
+int	ft_isdigit(int src)
+{
+	if ((src >= '0') && (src <= '9'))
+		return (1);
+	return (0);
+}
