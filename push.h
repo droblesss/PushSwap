@@ -24,7 +24,11 @@ int     lstpop(t_list **stack);
 void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b);
 int		ft_atoi(const char *str);
 void	fillA(t_list **stackA, char **argv);
-int		ft_isdigit(int src);
+<<<<<<< HEAD
+int		ft_isdigit(char src);
+=======
+int		ft_isdigit(char src);
+>>>>>>> refs/remotes/origin/main
 
 
 //MOVES

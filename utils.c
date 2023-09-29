@@ -117,11 +117,15 @@ void fillA(t_list **stackA, char **argv)
 	int i = 1;
 	while (argv[i] != NULL)
 	{
+		if (!ft_isdigit(argv[i])) {
+        perror("Error: Se encontró un elemento que no es un número.");
+        return;
+        }
 		ft_lstadd_back(stackA, ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
 }
-int	ft_isdigit(int src)
+int	ft_isdigit(char src)
 {
 	if ((src >= '0') && (src <= '9'))
 		return (1);
