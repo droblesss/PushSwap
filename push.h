@@ -24,7 +24,7 @@ int     lstpop(t_list **stack);
 void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b);
 int		ft_atoi(const char *str);
 void	fillA(t_list **stackA, char **argv);
-int	ft_isdigit(int src);
+int		ft_isdigit(int src);
 
 
 //MOVES
@@ -43,6 +43,7 @@ void	rrb(t_list **stack_b, int ss);
 //CHECKERS
 
 void	all_elements_are_numbers(t_list *list);
+void	not_repeat(t_list *stack_a);
 
 
 #endif
