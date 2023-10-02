@@ -115,19 +115,35 @@ int lstpop(t_list **stack)
 void fillA(t_list **stackA, char **argv)
 {
 	int i = 1;
+	int j = 0;
 	while (argv[i] != NULL)
 	{
-		if (!ft_isdigit(argv[i])) {
-        perror("Error: Se encontró un elemento que no es un número.");
-        return;
-        }
+		
+		all_elements_are_numbers(argv);
 		ft_lstadd_back(stackA, ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
+	not_repeat((*stackA));
 }
+
 int	ft_isdigit(char src)
 {
-	if ((src >= '0') && (src <= '9'))
-		return (1);
-	return (0);
+	printf("Entrando en la funcion isdigit\n");
+	printf("%c", src);
+	if ((src >= '0') && (src <='9')){
+		return 0;
+	}
+	exit(1);
+}
+int	ft_lstsize(t_list *lst)
+{
+	int	contador;
+
+	contador = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		contador++;
+	}
+	return (contador);
 }
