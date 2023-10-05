@@ -9,7 +9,7 @@ int main(int argc, char **argv)
     t_list *stackB = NULL;
 
 	//stackB->size = 0;
-	int i = 1;
+	//int i = 1;
 		
 	fillA(&stackA,argv);
 	(*stackA).size = argc -1;

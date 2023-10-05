@@ -112,47 +112,6 @@ void rr(t_list **stack_a,t_list **stack_b, int ss)
 		write(1, "rr\n", 3);
 }
 
-/*void rra(t_list **stack_a, int ss)
-{
-	int extract;
-	t_list *aux;
-
-	aux= ft_lstlast(*stack_a);
-	extract = aux->content;
-	free(aux);
-	ft_lstadd_front(stack_a,ft_lstnew(extract));
-	if (ss == 0)
-		write(1, "rra\n", 4);
-	
-}*/
-
-/*void rra(t_list **stack_a, int ss)
-{
-    if (*stack_a == NULL || (*stack_a)->next == NULL) {
-        // La pila está vacía o tiene un solo elemento, no se puede realizar rra
-        return;
-    }
-
-    t_list *current = *stack_a;
-    t_list *previous = NULL;
-
-    // Busca el penúltimo elemento
-    while (current->next != NULL) {
-        previous = current;
-        current = current->next;
-    }
-
-    // Mueve el último elemento al frente de la pila
-    previous->next = NULL;
-    current->next = *stack_a;
-    *stack_a = current;
-
-    // Imprime el mensaje si es necesario
-    if (ss == 0)
-        write(1, "rra\n", 4);
-}*/
-
-
 void rra(t_list **stack_a, int ss)
 {
     if (*stack_a == NULL || (*stack_a)->next == NULL) {

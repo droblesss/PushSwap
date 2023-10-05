@@ -115,7 +115,7 @@ int lstpop(t_list **stack)
 void fillA(t_list **stackA, char **argv)
 {
 	int i = 1;
-	int j = 0;
+	//int j = 0;
 	while (argv[i] != NULL)
 	{
 		

@@ -25,6 +25,10 @@ void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b);
 int		ft_atoi(const char *str);
 void	fillA(t_list **stackA, char **argv);
 int		ft_isdigit(char src);
+int		ft_sign(char src);
+int		ft_lowest(t_list *stack_a);
+int		ft_highest(t_list	*stack_a);
+
 
 
 //MOVES

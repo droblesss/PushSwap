@@ -12,8 +12,11 @@ int all_elements_are_numbers(char **list)
     int j = 0;
 
     while (list[i]) {
+        j = 0;
         while (list[i][j])
         {
+            if ((list[i][j] == '-' || list[i][j] == '+' ) && j == 0)
+                j++;
             ft_isdigit(list[i][j]);
             j++;
             /* code */
@@ -54,4 +57,14 @@ void not_repeat(t_list *stack_a)
         size--;
         current = current->next;
     }
+}
+
+int ft_sign(char src)
+{
+	printf("Entrando en la funcion signo\n");
+	printf("%c", src);
+	if (((src >= '0') && (src <='9')) || src == '-' || src == '+'){
+		return 0;
+	}
+	exit(1);
 }
