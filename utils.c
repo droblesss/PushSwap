@@ -1,8 +1,6 @@
 
 # include "push.h"
 
-
-
 void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
 {
     printf("\n--------------\n");

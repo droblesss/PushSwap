@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 	fillA(&stackA,argv);
 	(*stackA).size = argc -1;
 	ft_print_stack_horizontal(stackA, stackB);
+	//choosealg(stackA, stackA->size);
 	ft_order_3(&stackA);
 	ft_print_stack_horizontal(stackA, stackB);
 

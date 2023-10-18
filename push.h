@@ -54,6 +54,8 @@ int		all_elements_are_numbers(char **list);
 int		ft_lstsize(t_list *lst);
 int		checksorted(t_list *stack_a);
 int		postionfinder(t_list *stack, int num);
+void	choosealg(t_list *stack_a, int size);
+
 
 
 #endif
