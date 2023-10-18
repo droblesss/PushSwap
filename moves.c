@@ -72,7 +72,7 @@ void pa(t_list **stack_a, t_list **stack_b)
 {
 	ft_lstadd_front(stack_a, ft_lstnew(lstpop(stack_b)));
 	(*stack_a)->size = (*stack_a)->size+1;
-	(*stack_b)->size = (*stack_b)->size+-1;
+	(*stack_b)->size = (*stack_b)->size-1;
 	write(1, "pa\n", 3);
 }
 
@@ -114,9 +114,8 @@ void rr(t_list **stack_a,t_list **stack_b, int ss)
 
 void rra(t_list **stack_a, int ss)
 {
-    if (*stack_a == NULL || (*stack_a)->next == NULL) {
+    if (*stack_a == NULL || (*stack_a)->next == NULL)
         return;
-    }
 
     t_list *current = *stack_a;
     t_list *previous = NULL;

@@ -14,12 +14,7 @@ int main(int argc, char **argv)
 	fillA(&stackA,argv);
 	(*stackA).size = argc -1;
 	ft_print_stack_horizontal(stackA, stackB);
-	rra(&stackA,0);
-	ft_print_stack_horizontal(stackA, stackB);
-	pb(&stackA, &stackB);
-	pb(&stackA, &stackB);
-	ft_print_stack_horizontal(stackA, stackB);
-	rr(&stackA,&stackB,1);
+	ft_order_3(&stackA);
 	ft_print_stack_horizontal(stackA, stackB);
 
 	return 0;

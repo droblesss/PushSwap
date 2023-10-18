@@ -28,6 +28,9 @@ int		ft_isdigit(char src);
 int		ft_sign(char src);
 int		ft_lowest(t_list *stack_a);
 int		ft_highest(t_list	*stack_a);
+int		postionfinder(t_list *stack, int num);
+void	ft_order_3(t_list **stack_a);
+
 
 
 
@@ -49,6 +52,8 @@ void	rrb(t_list **stack_b, int ss);
 void	not_repeat(t_list *stack_a);
 int		all_elements_are_numbers(char **list);
 int		ft_lstsize(t_list *lst);
+int		checksorted(t_list *stack_a);
+int		postionfinder(t_list *stack, int num);
 
 
 #endif

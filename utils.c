@@ -116,7 +116,7 @@ void fillA(t_list **stackA, char **argv)
 {
 	int i = 1;
 	//int j = 0;
-	while (argv[i] != NULL)
+	while (argv[i])
 	{
 		
 		all_elements_are_numbers(argv);
