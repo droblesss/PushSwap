@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/18 19:00:11 by drobles           #+#    #+#             */
+/*   Updated: 2023/10/18 19:02:10 by drobles          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_H
 # define PUSH_H
 
@@ -5,7 +17,6 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-//# include "Libft/libft.h"
 //# include "Ft_printf/libftprintf.h"
 
 typedef struct s_list
@@ -30,6 +41,8 @@ int		ft_lowest(t_list *stack_a);
 int		ft_highest(t_list	*stack_a);
 int		postionfinder(t_list *stack, int num);
 void	ft_order_3(t_list **stack_a);
+void	ft_sort10(t_list **stack_a, t_list **stack_b);
+
 
 
 

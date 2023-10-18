@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves_a.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/18 18:59:54 by drobles           #+#    #+#             */
+/*   Updated: 2023/10/18 18:59:55 by drobles          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "push.h"
 
 void sa(t_list **stack_a, int ss)
@@ -23,8 +35,6 @@ void sa(t_list **stack_a, int ss)
 void pa(t_list **stack_a, t_list **stack_b)
 {
 	ft_lstadd_front(stack_a, ft_lstnew(lstpop(stack_b)));
-	(*stack_a)->size = (*stack_a)->size+1;
-	(*stack_b)->size = (*stack_b)->size-1;
 	write(1, "pa\n", 3);
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   nums.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/18 19:00:02 by drobles           #+#    #+#             */
+/*   Updated: 2023/10/18 19:00:03 by drobles          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "push.h"
 
 
@@ -30,33 +42,6 @@ int	ft_highest(t_list	*stack_a)
 	return (number);
 
 }
-
-void ft_order_3(t_list **stack_a)
-{
-	int min;
-	int max;
-
-	min = postionfinder(*stack_a, ft_lowest(*stack_a));
-	max = postionfinder(*stack_a, ft_highest(*stack_a));
-	if (min == 0 && max == 1)
-	{
-		rra(stack_a, 0);
-		sa(stack_a, 0);
-	}
-	else if (min == 1 && max == 2)
-		sa(stack_a, 0);
-	else if (max == 1 && min == 2)
-		rra(stack_a, 0);
-	else if (max == 0 && min == 1)
-		ra(stack_a, 0);
-	else if (max == 0 && min == 2)
-	{
-		rra(stack_a, 0);
-		rra(stack_a, 0);
-		sa(stack_a, 0);
-	}
-}
-
 
 int	postionfinder(t_list *stack, int num)
 {

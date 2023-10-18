@@ -1,16 +1,15 @@
-/*El objetivo es ordenar los números del stack a en orden ascendente.
-• Para hacerlo tienes las siguientes operaciones a tu disposición:
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/18 18:59:58 by drobles           #+#    #+#             */
+/*   Updated: 2023/10/18 19:01:53 by drobles          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-
-rra : reverse rotate a - desplaza hacia abajo todos los elementos del stack a una
-posición, de forma que el último elemento se convierte en el primero.
-
-rrb : reverse rotate b - desplaza hacia abajo todos los elementos del stack b una
-posición, de forma que el último elemento se convierte en el primero.
-rrr : reverse rotate a y reverse rotate b - desplaza al mismo tiempo todos
-los elementos del stack a y del stack b una posición hacia abajo, de forma que
-el último elemento se convierte en el primero
-*/
 # include "push.h"
 
 void sb(t_list **stack_b, int ss)

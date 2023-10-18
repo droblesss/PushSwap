@@ -1,9 +1,15 @@
-/*
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checks.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/18 18:59:44 by drobles           #+#    #+#             */
+/*   Updated: 2023/10/18 19:02:34 by drobles          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-Comprobar que todos son numeros --> isalnum
-Comprobar que no haya ningun repetido --> Por hacer
-Comprobar que no es mayor que un int  
-*/
 #include "push.h"
 
 int all_elements_are_numbers(char **list)
@@ -19,15 +25,13 @@ int all_elements_are_numbers(char **list)
                 j++;
             ft_isdigit(list[i][j]);
             j++;
-            /* code */
+       
         }
         i++;
     }
 
-    return 1; // Si llega al final de la cadena sin encontrar caracteres no numéricos, retorna 1 (todos son números).
+    return 1;
 }
-
-
 
 void not_repeat(t_list *stack_a)
 {
@@ -42,7 +46,7 @@ void not_repeat(t_list *stack_a)
     while (size > 0)
     {
         number = current->content;
-        compare = current->next; // Corregido aquí
+        compare = current->next;
 
         while (compare != NULL)
         {
@@ -61,8 +65,6 @@ void not_repeat(t_list *stack_a)
 
 int ft_sign(char src)
 {
-	printf("Entrando en la funcion signo\n");
-	printf("%c", src);
 	if (((src >= '0') && (src <='9')) || src == '-' || src == '+'){
 		return 0;
 	}
