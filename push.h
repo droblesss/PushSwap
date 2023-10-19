@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:11 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/18 19:02:10 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/19 13:39:31 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
+
 //# include "Ft_printf/libftprintf.h"
 
 typedef struct s_list
@@ -43,10 +45,6 @@ int		postionfinder(t_list *stack, int num);
 void	ft_order_3(t_list **stack_a);
 void	ft_sort10(t_list **stack_a, t_list **stack_b);
 
-
-
-
-
 //MOVES
 
 void	sa(t_list **stack_a, int ss);
@@ -67,8 +65,7 @@ int		all_elements_are_numbers(char **list);
 int		ft_lstsize(t_list *lst);
 int		checksorted(t_list *stack_a);
 int		postionfinder(t_list *stack, int num);
-void	choosealg(t_list *stack_a, int size);
-
-
+void	choosealg(t_list **stack_a, t_list **stack_b);
+void	ft_intsize(t_list *stack_a);
 
 #endif

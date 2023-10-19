@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:15 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/18 19:00:16 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/19 11:51:48 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,12 +134,13 @@ void fillA(t_list **stackA, char **argv)
 		i++;
 	}
 	not_repeat((*stackA));
+	ft_intsize(*stackA);
 }
 
 int	ft_isdigit(char src)
 {
-	printf("Entrando en la funcion isdigit\n");
-	printf("%c", src);
+	//printf("Entrando en la funcion isdigit\n");
+	//printf("%c", src);
 	if ((src >= '0') && (src <='9')){
 		return 0;
 	}

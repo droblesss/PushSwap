@@ -6,7 +6,7 @@
 #    By: drobles <drobles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 18:59:50 by drobles           #+#    #+#              #
-#    Updated: 2023/10/18 18:59:51 by drobles          ###   ########.fr        #
+#    Updated: 2023/10/19 10:49:20 by drobles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 CC = 	gcc
 CFLAGS = -I. -Wall -Wextra -Werror #-g3 -fsanitize=address
 
-SRCS = checks.c moves_a.c moves.c nums.c push.c utils.c utils2.c algorithms.c
+SRCS = checks.c moves_a.c moves.c nums.c push_swap.c utils.c utils2.c algorithms.c
 OBJS = $(SRCS:.c=.o)
 
 PRINTF = Ft_Printf/

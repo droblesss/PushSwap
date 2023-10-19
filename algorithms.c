@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:59:28 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/18 18:59:29 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/19 11:27:25 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ void	ft_sort10(t_list **stack_a, t_list **stack_b)
     while (ft_lstsize(*stack_a) > 3)
     {
         int lowest = ft_lowest(*stack_a);
-        //int highest = ft_highest(*stack_a);
-
         while ((*stack_a)->content != lowest)
         {
             if (postionfinder(*stack_a, lowest) < ft_lstsize(*stack_a) / 2)
@@ -85,9 +83,7 @@ void	ft_sort10(t_list **stack_a, t_list **stack_b)
 
         pb(stack_a, stack_b);
     }
-
     ft_order_3(stack_a);
-
     while (ft_lstsize(*stack_b) > 0)
     {
         pa(stack_a, stack_b);
