@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:15 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 11:51:48 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/19 18:03:10 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 
 void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
 {
-    printf("\n--------------\n");
-    printf("A:");
+    ft_printf("\n--------------\n");
+    ft_printf("A:");
     while (stack_a)
     {
-        printf(" %d |", (int)stack_a->content);
+        ft_printf(" %d |", (int)stack_a->content);
         stack_a = stack_a->next;
     }
-    printf("\n");
-    printf("B:");
+    ft_printf("\n");
+    ft_printf("B:");
     while (stack_b)
     {
-        printf(" %d |", (int)stack_b->content);
+        ft_printf(" %d |", (int)stack_b->content);
         stack_b = stack_b->next;
     }
-    printf("\n--------------\n");
+    ft_printf("\n--------------\n");
 }
 int	ft_atoi(const char *str)
 {
@@ -128,7 +128,6 @@ void fillA(t_list **stackA, char **argv)
 	//int j = 0;
 	while (argv[i])
 	{
-		
 		all_elements_are_numbers(argv);
 		ft_lstadd_back(stackA, ft_lstnew(ft_atoi(argv[i])));
 		i++;
@@ -139,8 +138,8 @@ void fillA(t_list **stackA, char **argv)
 
 int	ft_isdigit(char src)
 {
-	//printf("Entrando en la funcion isdigit\n");
-	//printf("%c", src);
+	//ft_printf("Entrando en la funcion isdigit\n");
+	//ft_printf("%c", src);
 	if ((src >= '0') && (src <='9')){
 		return 0;
 	}

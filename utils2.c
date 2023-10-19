@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:19 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 13:40:11 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/19 16:18:46 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void choosealg(t_list **stack_a, t_list **stack_b)
 		ft_order_3(stack_a);
 	else if (size >= 4 && size <= 10)
 		ft_sort10(stack_a, stack_b);
-	/*else
-		ft_radix;*/
+	else if (size > 10)
+		ft_radix(stack_a, stack_b);
 }

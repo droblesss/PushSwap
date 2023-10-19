@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:11 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 13:39:31 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/19 17:47:23 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <limits.h>
 
-//# include "Ft_printf/libftprintf.h"
+# include "Ft_printf/libftprintf.h"
 
 typedef struct s_list
 {
@@ -44,6 +44,8 @@ int		ft_highest(t_list	*stack_a);
 int		postionfinder(t_list *stack, int num);
 void	ft_order_3(t_list **stack_a);
 void	ft_sort10(t_list **stack_a, t_list **stack_b);
+void	ft_radix(t_list **stack_a, t_list **stack_b);
+void bitsorter(int i, int num, t_list **stack_a, t_list **stack_b);
 
 //MOVES
 
