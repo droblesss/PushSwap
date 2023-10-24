@@ -6,16 +6,16 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:19 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 16:18:46 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:09:53 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push.h"
+#include "push.h"
 
-void choosealg(t_list **stack_a, t_list **stack_b)
+void	choosealg(t_list **stack_a, t_list **stack_b)
 {
-	int size;
-	
+	int	size;
+
 	size = ft_lstsize(*stack_a);
 	if (size == 0)
 	{

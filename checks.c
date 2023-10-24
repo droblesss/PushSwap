@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:59:44 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 17:54:06 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 11:40:20 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,6 @@ void	not_repeat(t_list *stack_a)
 		size--;
 		current = current->next;
 	}
-}
-
-int	ft_sign(char src)
-{
-	if (((src >= '0') && (src <= '9')) || src == '-' || src == '+')
-	{
-		return (0);
-	}
-	exit(1);
 }
 
 int	checksorted(t_list *stack_a)

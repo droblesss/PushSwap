@@ -6,16 +6,15 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:02 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/18 19:00:03 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 18:47:16 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push.h"
-
+#include "push.h"
 
 int	ft_lowest(t_list *stack_a)
 {
-	int number;
+	int	number;
 
 	number = stack_a->content;
 	while (stack_a->next != NULL)
@@ -25,12 +24,11 @@ int	ft_lowest(t_list *stack_a)
 		stack_a = stack_a->next;
 	}
 	return (number);
-
 }
 
 int	ft_highest(t_list	*stack_a)
 {
-	int number;
+	int	number;
 
 	number = stack_a->content;
 	while (stack_a->next != NULL)
@@ -40,7 +38,6 @@ int	ft_highest(t_list	*stack_a)
 		stack_a = stack_a->next;
 	}
 	return (number);
-
 }
 
 int	postionfinder(t_list *stack, int num)

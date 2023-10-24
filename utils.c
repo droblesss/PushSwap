@@ -6,14 +6,13 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:15 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 18:03:10 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:01:43 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push.h"
 
-# include "push.h"
-
-void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
+/*void	ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
 {
     ft_printf("\n--------------\n");
     ft_printf("A:");
@@ -30,7 +29,8 @@ void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
         stack_b = stack_b->next;
     }
     ft_printf("\n--------------\n");
-}
+}*/
+
 int	ft_atoi(const char *str)
 {
 	int		c;
@@ -59,59 +59,9 @@ int	ft_atoi(const char *str)
 		return (0);
 	return (numero * sign);
 }
-void	ft_lstdelone(t_list *lst, void (*del)(int))
-{
-	if (lst)
-	{
-		del(lst->content);
-		free(lst);
-		lst = NULL;
-	}
-}
 
-t_list	*ft_lstlast(t_list *lst)
+int	lstpop(t_list **stack)
 {
-	while (lst != NULL && lst->next != NULL)
-		lst = lst->next;
-	return (lst);
-}
-
-t_list	*ft_lstnew(int content)
-{
-	t_list	*nodo;
-
-	nodo = (t_list*)malloc(sizeof(t_list));
-	if (nodo != NULL)
-	{
-		nodo->content = content;
-		nodo->next = NULL;
-	}
-	return (nodo);
-}
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	if (new)
-	{
-		if (!lst)
-			*lst = new;
-		new->next = *lst;
-		*lst = new;
-	}
-}
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*temporal;
-
-	temporal = ft_lstlast(*lst);
-	if (*lst == NULL)
-		*lst = new;
-	else
-		temporal->next = new;
-}
-
-int lstpop(t_list **stack)
-{
-	
 	t_list	*aux;
 	int		cont;
 
@@ -122,29 +72,31 @@ int lstpop(t_list **stack)
 	return (cont);
 }
 
-void fillA(t_list **stackA, char **argv)
+void	filla(t_list **stack_a, char **argv)
 {
-	int i = 1;
-	//int j = 0;
+	int	i;
+
+	i = 1;
 	while (argv[i])
 	{
 		all_elements_are_numbers(argv);
-		ft_lstadd_back(stackA, ft_lstnew(ft_atoi(argv[i])));
+		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
-	not_repeat((*stackA));
-	ft_intsize(*stackA);
+	not_repeat((*stack_a));
+	ft_intsize(*stack_a);
 }
 
 int	ft_isdigit(char src)
 {
-	//ft_printf("Entrando en la funcion isdigit\n");
-	//ft_printf("%c", src);
-	if ((src >= '0') && (src <='9')){
-		return 0;
+	if ((src >= '0') && (src <= '9'))
+	{
+		return (0);
 	}
+	ft_printf("Error");
 	exit(1);
 }
+
 int	ft_lstsize(t_list *lst)
 {
 	int	contador;

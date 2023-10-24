@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:59:28 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 17:52:59 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 13:32:01 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_sort10(t_list **stack_a, t_list **stack_b)
 				< (ft_lstsize(*stack_a) / 2))
 				ra(stack_a, 0);
 			else
-				rra(stack_a, 1);
+				rra(stack_a, 0);
 		}
 		pb(stack_a, stack_b);
 	}

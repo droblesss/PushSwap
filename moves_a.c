@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:59:54 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 18:00:22 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 09:59:32 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	pa(t_list **stack_a, t_list **stack_b)
 
 void	ra(t_list **stack_a, int ss)
 {
-	int extract;
+	int	extract;
 
 	if ((*stack_a) != NULL && (*stack_a)->next != NULL)
 	{
@@ -51,22 +51,23 @@ void	ra(t_list **stack_a, int ss)
 
 void	rra(t_list **stack_a, int ss)
 {
-    t_list	*current;
-    t_list	*previous;
+	t_list	*current;
+	t_list	*previous;
+
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
-        return ;
-    current = *stack_a;
-    previous = NULL;
-    while (current->next != NULL)
+		return ;
+	current = *stack_a;
+	previous = NULL;
+	while (current->next != NULL)
 	{
-        previous = current;
-        current = current->next;
-    }
-    previous->next = NULL;
-    current->next = *stack_a;
-    *stack_a = current;
-    if (ss == 0)
-        write(1, "rra\n", 4);
+		previous = current;
+		current = current->next;
+	}
+	previous->next = NULL;
+	current->next = *stack_a;
+	*stack_a = current;
+	if (ss == 0)
+		write(1, "rra\n", 4);
 }
 
 void	ss(t_list **stack_a, t_list **stack_b, int ss)

@@ -6,26 +6,26 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:07 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 18:06:27 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:11:00 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push.h"
 
-
-# include "push.h"
-
-
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_list *stackA = NULL;
-    t_list *stackB = NULL;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
-	(void)argc;
-	fillA(&stackA,argv);
-	(*stackA).size = ft_lstsize(stackA);
-	(*stackA).size = 0;
+	stack_a = NULL;
+	stack_b = NULL;
+	if (argc == 1)
+		return (0);
+	filla(&stack_a, argv);
+	(*stack_a).size = ft_lstsize(stack_a);
+	(*stack_a).size = 0;
 	//ft_print_stack_horizontal(stackA, stackB);
-	choosealg(&stackA, &stackB);
+	choosealg(&stack_a, &stack_b);
 	//ft_print_stack_horizontal(stackA, stackB);
-	return 0;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:59:58 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 12:22:27 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 18:46:00 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,21 @@ void	rr(t_list **stack_a, t_list **stack_b, int ss)
 
 void	rrb(t_list **stack_b, int ss)
 {
-	if(*stack_b == NULL || (*stack_b)->next == NULL)
-		return ;
-    t_list	*current = *stack_b;
-    t_list	*previous = NULL;
+	t_list	*current;
+	t_list	*previous;
 
-    while(current->next != NULL) {
-        previous = current;
-        current = current->next;
-    }
-    previous->next = NULL;
-    current->next = *stack_b;
-    *stack_b = current;
-    if (ss == 0)
-        write(1, "rra\n", 4);
+	current = *stack_b;
+	previous = NULL;
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
+	while (current->next != NULL)
+	{
+		previous = current;
+		current = current->next;
+	}
+	previous->next = NULL;
+	current->next = *stack_b;
+	*stack_b = current;
+	if (ss == 0)
+		write(1, "rra\n", 4);
 }

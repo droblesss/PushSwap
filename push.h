@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:11 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/19 17:47:23 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:10:32 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 int     lstpop(t_list **stack);
 void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b);
 int		ft_atoi(const char *str);
-void	fillA(t_list **stackA, char **argv);
+void	filla(t_list **stackA, char **argv);
 int		ft_isdigit(char src);
 int		ft_sign(char src);
 int		ft_lowest(t_list *stack_a);
@@ -45,7 +45,7 @@ int		postionfinder(t_list *stack, int num);
 void	ft_order_3(t_list **stack_a);
 void	ft_sort10(t_list **stack_a, t_list **stack_b);
 void	ft_radix(t_list **stack_a, t_list **stack_b);
-void bitsorter(int i, int num, t_list **stack_a, t_list **stack_b);
+void	bitsorter(int i, int num, t_list **stack_a, t_list **stack_b);
 
 //MOVES
 
