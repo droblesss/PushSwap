@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:59:28 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/24 13:32:01 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:47:01 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	ft_order_3(t_list **stack_a)
 	max = postionfinder(*stack_a, ft_highest(*stack_a));
 	if (min == 0 && max == 1)
 	{
-		rra(stack_a, 0);
 		sa(stack_a, 0);
+		ra(stack_a, 0);
 	}
 	else if (min == 1 && max == 2)
 		sa(stack_a, 0);
@@ -32,9 +32,8 @@ void	ft_order_3(t_list **stack_a)
 		ra(stack_a, 0);
 	else if (max == 0 && min == 2)
 	{
-		rra(stack_a, 0);
-		rra(stack_a, 0);
 		sa(stack_a, 0);
+		rra(stack_a, 0);
 	}
 }
 

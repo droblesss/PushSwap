@@ -6,13 +6,13 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:15 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/24 19:01:43 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:28:20 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-/*void	ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
+void	ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
 {
     ft_printf("\n--------------\n");
     ft_printf("A:");
@@ -29,7 +29,7 @@
         stack_b = stack_b->next;
     }
     ft_printf("\n--------------\n");
-}*/
+}
 
 int	ft_atoi(const char *str)
 {
@@ -93,7 +93,7 @@ int	ft_isdigit(char src)
 	{
 		return (0);
 	}
-	ft_printf("Error");
+	write(2, "Error\n", 6);
 	exit(1);
 }
 

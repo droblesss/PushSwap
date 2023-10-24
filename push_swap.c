@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:07 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/24 19:11:00 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:38:55 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	main(int argc, char **argv)
 	filla(&stack_a, argv);
 	(*stack_a).size = ft_lstsize(stack_a);
 	(*stack_a).size = 0;
-	//ft_print_stack_horizontal(stackA, stackB);
+	//ft_print_stack_horizontal(stack_a, stack_b);
 	choosealg(&stack_a, &stack_b);
-	//ft_print_stack_horizontal(stackA, stackB);
+	//ft_print_stack_horizontal(stack_a, stack_b);
 	return (0);
 }

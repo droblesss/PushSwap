@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:59:44 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/24 11:40:20 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/24 19:18:53 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	not_repeat(t_list *stack_a)
 		{
 			if (number == compare->content)
 			{
-				printf("Error\n");
+				write(2, "Error\n", 6);
 				exit(1);
 			}
 			compare = compare->next;
@@ -78,7 +78,7 @@ void	ft_intsize(t_list *stack_a)
 	{
 		if (stack_a->content > INT_MAX || stack_a->content < INT_MIN)
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 			exit(1);
 		}
 		stack_a = stack_a->next;
