@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:15 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/26 20:01:11 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 20:20:08 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ long	ft_atoi(const char *str)
 	c = 0;
 	sign = 1;
 	numero = 0;
+	if (ft_strlen(str) > 12 || ft_strlen(str) < 1)
+		ft_error(1);
 	while (str[c] == 32 || (str[c] >= 9 && str[c] <= 13))
 			c++;
 	if (str[c] == '-' || str[c] == '+')
@@ -53,9 +55,7 @@ long	ft_atoi(const char *str)
 		numero = numero * 10 + (str[c] - 48);
 		c++;
 	}
-	if (numero > 9223372036854775807 && sign == 1)
-		ft_error(1);
-	else if (numero > 9223372036854775807 && sign == -1)
+	if (numero * sign < INT_MIN || numero * sign > INT_MAX)
 		ft_error(1);
 	return (numero * sign);
 }

@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:19 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/26 19:37:55 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 20:21:00 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ void	ft_int_lstclear(t_list **lst)
 	t_list	*next;
 
 	if (lst == NULL || *lst == NULL)
-		return;
-
+		return ;
 	current = *lst;
 	while (current != NULL)
 	{
@@ -54,6 +53,15 @@ void	ft_int_lstclear(t_list **lst)
 		free(current);
 		current = next;
 	}
+	*lst = NULL;
+}
 
-	*lst = NULL; // Establece el puntero de la pila a NULL
+int	ft_strlen(const char *str)
+{
+	int	c;
+
+	c = 0;
+	while (str[c] != '\0')
+		c++;
+	return (c);
 }

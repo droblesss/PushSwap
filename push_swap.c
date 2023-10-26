@@ -6,16 +6,11 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:07 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/26 19:47:35 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 20:22:49 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
-
-/*void	leaker(void)
-{
-	system("leaks -q push_swap");
-}*/
 
 int	main(int argc, char **argv)
 {
@@ -30,6 +25,5 @@ int	main(int argc, char **argv)
 	choosealg(&stack_a, &stack_b);
 	ft_int_lstclear(&stack_a);
 	ft_int_lstclear(&stack_b);
-	//atexit(leaker);
 	return (0);
 }
