@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:11 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/24 19:10:32 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 12:35:44 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@
 # include <unistd.h>
 # include <limits.h>
 
-# include "Ft_printf/libftprintf.h"
-
 typedef struct s_list
 {
-	int				content;
-	struct s_list	*next;
-	int				size;
+	int					content;
+	struct s_list		*next;
+	long				size;
 }	t_list;
 
 t_list	*ft_lstlast(t_list *lst);
@@ -33,9 +31,9 @@ t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-int     lstpop(t_list **stack);
-void    ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b);
-int		ft_atoi(const char *str);
+int		lstpop(t_list **stack);
+void	ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b);
+long	ft_atoi(const char *str);
 void	filla(t_list **stackA, char **argv);
 int		ft_isdigit(char src);
 int		ft_sign(char src);
@@ -53,10 +51,10 @@ void	sa(t_list **stack_a, int ss);
 void	sb(t_list **stack_b, int ss);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	pa(t_list **stack_a, t_list **stack_b);
-void 	ss(t_list **stack_a, t_list **stack_b, int ss);
+void	ss(t_list **stack_a, t_list **stack_b, int ss);
 void	ra(t_list **stack_a, int ss);
 void	rb(t_list **stack_b, int ss);
-void	rr(t_list **stack_a,t_list **stack_b, int ss);
+void	rr(t_list **stack_a, t_list **stack_b, int ss);
 void	rra(t_list **stack_a, int ss);
 void	rrb(t_list **stack_b, int ss);
 

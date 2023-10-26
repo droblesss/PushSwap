@@ -6,13 +6,13 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:15 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/24 19:28:20 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 12:22:49 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-void	ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
+/*void	ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
 {
     ft_printf("\n--------------\n");
     ft_printf("A:");
@@ -29,9 +29,9 @@ void	ft_print_stack_horizontal(t_list *stack_a, t_list *stack_b)
         stack_b = stack_b->next;
     }
     ft_printf("\n--------------\n");
-}
+}*/
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int		c;
 	int		sign;
@@ -54,9 +54,9 @@ int	ft_atoi(const char *str)
 		c++;
 	}
 	if (numero > 9223372036854775807 && sign == 1)
-		return (-1);
+		exit (1);
 	else if (numero > 9223372036854775807 && sign == -1)
-		return (0);
+		exit (1);
 	return (numero * sign);
 }
 
