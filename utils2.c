@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:19 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/26 10:40:55 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 17:05:36 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,13 @@ void	choosealg(t_list **stack_a, t_list **stack_b)
 		ft_sort10(stack_a, stack_b);
 	else if (size > 10)
 		ft_radix(stack_a, stack_b);
+}
+
+void	ft_error(int flag)
+{
+	if (flag == 1)
+	{
+		write(2, "Error\n", 6);
+		exit (1);
+	}
 }

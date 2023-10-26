@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:11 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/26 12:35:44 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 17:05:19 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	ft_order_3(t_list **stack_a);
 void	ft_sort10(t_list **stack_a, t_list **stack_b);
 void	ft_radix(t_list **stack_a, t_list **stack_b);
 void	bitsorter(int i, int num, t_list **stack_a, t_list **stack_b);
+void	ft_error(int flag);
 
 //MOVES
 

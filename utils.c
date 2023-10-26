@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:15 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/26 12:22:49 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 17:02:56 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ long	ft_atoi(const char *str)
 		c++;
 	}
 	if (numero > 9223372036854775807 && sign == 1)
-		exit (1);
+		ft_error(1);
 	else if (numero > 9223372036854775807 && sign == -1)
-		exit (1);
+		ft_error(1);
 	return (numero * sign);
 }
 
