@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:59:28 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/24 19:47:01 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 19:43:24 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void	ft_order_3(t_list **stack_a)
 {
 	int	min;
 	int	max;
-
+	
+	if (checksorted(*stack_a) == 1)
+		return ;
 	min = postionfinder(*stack_a, ft_lowest(*stack_a));
 	max = postionfinder(*stack_a, ft_highest(*stack_a));
 	if (min == 0 && max == 1)

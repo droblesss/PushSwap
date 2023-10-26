@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:11 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/26 17:05:19 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 19:59:26 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 typedef struct s_list
 {
-	int					content;
+	long				content;
 	struct s_list		*next;
 	long				size;
 }	t_list;
@@ -45,6 +45,7 @@ void	ft_sort10(t_list **stack_a, t_list **stack_b);
 void	ft_radix(t_list **stack_a, t_list **stack_b);
 void	bitsorter(int i, int num, t_list **stack_a, t_list **stack_b);
 void	ft_error(int flag);
+void	ft_int_lstclear(t_list **lst);
 
 //MOVES
 

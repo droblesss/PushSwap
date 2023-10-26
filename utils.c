@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:00:15 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/26 17:02:56 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 20:01:11 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ long	ft_atoi(const char *str)
 {
 	int		c;
 	int		sign;
-	size_t	numero;
+	long	numero;
 
 	c = 0;
 	sign = 1;

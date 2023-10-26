@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:59:44 by drobles           #+#    #+#             */
-/*   Updated: 2023/10/26 16:56:31 by drobles          ###   ########.fr       */
+/*   Updated: 2023/10/26 19:56:31 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_intsize(t_list *stack_a)
 {
 	while (stack_a != NULL)
 	{
-		if (stack_a->content >= INT_MAX || stack_a->content <= INT_MIN)
+		if (stack_a->content > INT_MAX || stack_a->content < INT_MIN)
 		{
 			write(2, "Error\n", 6);
 			exit(1);
